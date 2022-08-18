@@ -1,0 +1,62 @@
+.btn {
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  padding: 6px 10px;
+  line-height: 1.33;
+  font-size: $font-normal;
+  color: $input-color;
+
+  @include no-select;
+
+  &-primary {
+    color:  $white;
+    background-color: $btn-primary-bg;
+    border-color: $input-color;
+
+    &:hover {
+      border-color: $btn-primary-border;
+      background-color: $btn-primary-bg-hover;
+    }
+  }
+
+  &:hover {
+    transition: all 0.5s ease 0s;
+  }
+
+  &-default {
+    background-color:  $white;
+    border: 1px solid $btn-default-border;
+
+    &:hover,
+    &:focus {
+      background-color: $btn-default-hover;
+      border-color: $btn-default-hover-border;
+    }
+  }
+
+  &-wrap {
+    button {
+      &:not(:last-child) {
+        margin-right: 8px;
+      }
+    }
+  }
+
+  &[disabled] {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  svg {
+    margin-right: 5px;
+  }
+
+  svg,
+  span {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}

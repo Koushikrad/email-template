@@ -1,0 +1,21 @@
+{{#if this.label}}
+  <label class="form-field--label" for={{this.textAreaId}}>
+    {{this.label}}
+    {{#if this.required}}
+      <span class="required">*</span>
+    {{/if}}
+  </label>
+{{/if}}
+<div class="form-field--wrapper">
+  <Textarea
+    id={{this.textAreaId}}
+    class="form-field--control"
+    @value={{mut this.value}} 
+    @cols={{mut this.cols}}
+    @rows={{mut this.rows}}
+    @max-rows={{mut this.max-rows}}
+  />
+  {{#if this.showErrorMessage}}
+    <label class="error-msg">{{v-get model property "message"}}</label>
+  {{/if}}
+</div>

@@ -1,0 +1,66 @@
+$input-height: 32px;
+
+.form-field {
+  margin-bottom: 20px;
+  display: block;
+  padding: 0;
+
+  &--control {
+    padding: 5px 12px;
+    border-radius: 4px;
+    height: $input-height;
+    width: 100%;
+    border: 1px solid $input-border;
+    outline: none;
+    font-size: $font-normal;
+    font-weight: 500;
+    color: $input-color;
+    transition: border-color ease-in-out 0.15s;
+    line-height: 1.4;
+    box-sizing: border-box;
+
+    &:focus {
+      border-color: $input-focus-color;
+      box-shadow: 0 0 0 1px $input-focus-color;
+    }
+  }
+
+  &--label {
+    display: inline-block;
+    margin-bottom: 8px;
+    text-align: left;
+    font-weight: 600;
+    font-size: $font-size-medium;
+    color: $input-label-color;
+
+    .required {
+      color: $brand-danger;
+    }
+  }
+
+  &--wrapper {
+    position: relative;
+    height: auto;
+  }
+}
+
+.invalid {
+  .form-field--control {
+    border-color: $brand-danger;
+    box-shadow: none;
+  }
+
+  .error-msg {
+    margin-top: 4px;
+    font-size: $font-size-medium;
+    font-weight: 400;
+    color: $brand-danger;
+  }
+}
+
+textarea {
+  &.form-field--control {
+    height: auto;
+    font-family: inherit;
+  }
+}

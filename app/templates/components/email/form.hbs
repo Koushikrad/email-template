@@ -1,0 +1,68 @@
+<form id="email-template" autocomplete="off">
+  <h2>Email Template </h2>
+  <fieldset>
+    <Ui::InputField
+      data-test-id="first-name"
+      @inputId={{"first-name"}}
+      @value={{this.user.firstName}}
+      @model={{this.user}}
+      @property="firstName"
+      @required={{true}}
+      @didValidate={{this.didValidate}}
+      @label="First Name"/>
+    <Ui::InputField
+      data-test-id="last-name"
+      @inputId={{"last-name"}}
+      @model={{this.user}}
+      @value={{this.user.lastName}}
+      @property="lastName"
+      @required={{true}}
+      @didValidate={{this.didValidate}}
+      @label="Last Name"/>
+  </fieldset>
+  <Ui::InputField
+    data-test-id="email"
+    @inputId={{"email"}}
+    @value={{this.user.email}}
+    @model={{this.user}}
+    @property="email"
+    @required={{true}}
+    @didValidate={{this.didValidate}}
+    @label="Email"/>
+  <Ui::TextArea
+    data-test-id="description"
+    @textAreaId={{"description"}}
+    @value={{this.user.description}}
+    @rows={{10}}
+    @max-rows={{20}}
+    @model={{this.user}}
+    @property="description"
+    @required={{true}}
+    @didValidate={{this.didValidate}}
+    @label="Description"/>
+  <input id="file-upload" accept="image/*"  type="file" class="hidden" onchange={{action "addImage"}} title="Add Image">
+  {{#each this.user.images as |image index|}}
+    <div class="image-wrapper" data-test-id="image-{{index}}">
+      <img alt="image" class="image" src={{image}}>
+      <button class="close" {{action "removeImage" image}}>
+        {{svg-jar "close" width="15px" height="15px" fill="white"}}
+      </button>
+    </div>
+  {{/each}}
+  <div class="float-right btn-wrap">
+    <button type="submit" class="btn btn-default" {{action "attachImage"}} disabled={{this.saving}} data-test-id="add-image">
+      {{svg-jar "attachment" width="14px" height="14px"}}
+      <span>Add Image</span>
+    </button>
+    <button type="submit" class="btn btn-primary" {{action "sendEmail"}} disabled={{this.saving}} data-test-id="save">
+      {{#if this.saving}}
+        Saving...
+      {{else}}
+        Save & Send
+      {{/if}}
+    </button>
+  </div>
+</form>
+{{#each this.flashMessages.queue as |message|}}
+  <FlashMessage @flash={{message}}/>
+{{/each}}

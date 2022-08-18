@@ -1,0 +1,20 @@
+<div class="form-field--wrapper">
+  {{#if this.label}}
+    <label class="form-field--label" for={{this.inputId}}>
+      {{this.label}}
+      {{#if this.required}}
+        <span class="required">*</span>
+      {{/if}}
+    </label>
+  {{/if}}
+  <Input
+    id={{this.inputId}}
+    class="form-field--control"
+    @value={{mut this.value}}
+    @placeholder={{this.defaultPlaceholder}}
+  />
+
+  {{#if this.showErrorMessage}}
+    <label class="error-msg">{{v-get model property "message"}}</label>
+  {{/if}}
+</div>
