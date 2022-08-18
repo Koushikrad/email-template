@@ -1,22 +1,42 @@
-# email-template
+# Email Template
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+## Tech Stack
+
+* EmberJs 3.12
+* SCSS
+* SMTP JS and Mailtrap (For Emailing)
+
+## Few Assumptions taken during the project:
+
+* Have kept accessibility score in mind and used corresponding colors and labels.
+* The page is responsive and supports mobile and Tab views.
+* The validation happens once user clicks the save and send button.
+* Added length validation based on Internet standards, minimum of 2 characters and maximum of 120 for first name and last name.
+* Images can be added and also be removed.
+* Emails are sent using SMTP and mailtrap.
+
+## FUTURE ENHANCEMENTS:
+
+* Attaching Images to email.
+
+## Video Demo of the project.
+
+https://user-images.githubusercontent.com/28425590/185413036-25201150-233a-4088-b1c1-1c40568a1b1e.mp4
 
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
 
 * [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/) (with npm)
+* [Node.js v12.22 (recommended)](https://nodejs.org/) (with npm)
 * [Ember CLI](https://ember-cli.com/)
-* [Google Chrome](https://google.com/chrome/)
+* [Google Chrome (for running tests)](https://google.com/chrome/)
 
 ## Installation
 
 * `git clone <repository-url>` this repository
 * `cd email-template`
-* `npm install`
+* `yarn install`
 
 ## Running / Development
 
@@ -44,14 +64,3 @@ Make use of the many generators for code, try `ember help generate` for more det
 * `ember build` (development)
 * `ember build --environment production` (production)
 
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](https://emberjs.com/)
-* [ember-cli](https://ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
